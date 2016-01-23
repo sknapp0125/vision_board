@@ -1,5 +1,10 @@
 %h1= @vision.title
 %p= @vision.description
+%p
+Submitted by
+= @vision.user.email
+
+%br/
 
 = link_to "Back", root_path
 = link_to "Edit", edit_vision_path

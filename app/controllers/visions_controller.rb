@@ -12,12 +12,12 @@ class VisionsController < ApplicationController
 
   # new visions
   def new
-    @vision = Vision.new
+    @vision = current_user.visions.build
   end
 
   # create visions
   def create
-    @vision = Vision.new(vision_params)
+    @vision = current_user.visions.build(vision_params)
 
     if @vision.save
       redirect_to @vision, notice: "You made a new Vision!"
